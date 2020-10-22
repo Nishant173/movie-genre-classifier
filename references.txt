@@ -1,0 +1,4 @@
+https://www.analyticsvidhya.com/blog/2019/04/predicting-movie-genres-nlp-multi-label-classification/
+https://towardsdatascience.com/multi-label-text-classification-5c505fdedca8
+https://code.visualstudio.com/docs/python/environments
+https://janakiev.com/blog/jupyter-virtual-envs/

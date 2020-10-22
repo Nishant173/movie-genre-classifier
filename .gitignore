@@ -1,0 +1,9 @@
+.vscode
+env
+model_files
+*__pycache__
+*.jovianrc
+*.ipynb_checkpoints
+*.html
+*.pkl
+*.tsv
