@@ -7,10 +7,10 @@ Classifies movie genre based on text corpus of the plot of the movie (Multi-labe
 ## Usage
 - Open terminal in the `src` directory and use the following snippet
 ```python
-from predict import predict_genres
+from predict import predict_genres_from_plot
 from utils import prettify_genres
 
-tuple_genres = predict_genres(text="The plot of some movie") # Returns tuple of possible genre/s
+tuple_genres = predict_genres_from_plot(text="The plot of some movie") # Returns tuple of possible genre/s
 print(prettify_genres(tuple_genres=tuple_genres))
 ```
 - Use the `config.py` file in the `src` directory to change configuration settings, when necessary.
