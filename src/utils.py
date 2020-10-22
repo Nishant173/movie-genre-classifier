@@ -21,3 +21,16 @@ def get_genre_value_count(data):
     for genres_by_movie in data['Genre'].tolist():
         genre_occurrences.extend(genres_by_movie)
     return pd.Series(data=genre_occurrences).value_counts().to_dict()
+
+def prettify_genres(tuple_genres):
+    """Takes in tuple of genre/s and returns string of pretty-printed genres"""
+    if not isinstance(tuple_genres, tuple):
+        raise TypeError("Expected tuple, but got {}".format(type(tuple_genres)))
+    if len(tuple_genres) == 0:
+        prettified_genres = "Could not predict genre"
+    elif len(tuple_genres) == 1:
+        prettified_genres = f"Genre is {tuple_genres[0]}"
+    else:
+        genres_commafied = ", ".join(tuple_genres)
+        prettified_genres = f"Genres are {genres_commafied}"
+    return prettified_genres
