@@ -6,7 +6,7 @@ Classifies movie genre based on text corpus of the plot of the movie (Multi-labe
 
 ## Usage
 - Open terminal in the `src` directory and use the following snippet
-```
+```python
 from predict import predict_genres
 from utils import prettify_genres
 
