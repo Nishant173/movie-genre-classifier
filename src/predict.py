@@ -3,7 +3,7 @@ import config
 import text_cleaner
 import utils
 
-def predict_genres(text):
+def predict_genres_from_plot(text):
     """
     Predicts movie-genre from corpus of text of movie-plot.
     Returns tuple containing genre/s of movie-plot given.

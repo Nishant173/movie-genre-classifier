@@ -6,3 +6,5 @@ LOAD_PREPROCESSED_DATA = True # Set to False if you want to preprocess the raw d
 PATH_MODEL_MLB = "../model_files/mlb_obj.pkl"
 PATH_MODEL_TFIDF = "../model_files/tfidf_obj.pkl"
 PATH_MODEL_OVR_CLF = "../model_files/ovr_clf_obj.pkl"
+
+PATH_MODEL_EVAL_METRICS = "../model_files/model_evaluation_metrics.pkl"

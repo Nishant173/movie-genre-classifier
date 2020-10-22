@@ -1,5 +1,8 @@
+import time
 import joblib
+import numpy as np
 import pandas as pd
+import warnings
 
 def pickle_load(filepath):
     """Loads data from pickle file, via joblib module"""
@@ -34,3 +37,32 @@ def prettify_genres(tuple_genres):
         genres_commafied = ", ".join(tuple_genres)
         prettified_genres = f"Genres are {genres_commafied}"
     return prettified_genres
+
+def get_timetaken_fstring(num_seconds):
+    """Returns formatted-string of time elapsed, given the number of seconds (int) elapsed"""
+    if num_seconds < 60:
+        secs = num_seconds
+        fstring_timetaken = f"{secs}s"
+    elif 60 < num_seconds < 3600:
+        mins, secs = divmod(num_seconds, 60)
+        fstring_timetaken = f"{mins}m {secs}s"
+    else:
+        hrs, secs_remainder = divmod(num_seconds, 3600)
+        mins, secs = divmod(secs_remainder, 60)
+        fstring_timetaken = f"{hrs}h {mins}m {secs}s"
+    return fstring_timetaken
+
+def run_and_timeit(func):
+    """
+    Takes in function; then runs it, times it, and prints out the time taken.
+    Parameters:
+        - func (object): Object of the function you want to execute.
+    """
+    start = time.time()
+    warnings.filterwarnings(action='ignore')
+    func()
+    end = time.time()
+    timetaken_in_secs = int(np.ceil(end - start))
+    timetaken_fstring = get_timetaken_fstring(num_seconds=timetaken_in_secs)
+    print(f"\nDone! Time taken: {timetaken_fstring}")
+    return None
