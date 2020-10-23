@@ -25,8 +25,8 @@ def preprocess_data():
     utils.pickle_save(data_obj=df_movie_data, filepath=config.PATH_MOVIE_DATA_PREPROCESSED)
     return df_movie_data
 
-def get_train_test_data():
-    """Returns Pandas DataFrame of preprocessed train-test movie plot/genre data"""
+def get_training_data():
+    """Returns Pandas DataFrame of preprocessed movie-plot/movie-genre training data"""
     if config.LOAD_PREPROCESSED_DATA:
         try:
             df_movie_data = utils.pickle_load(filepath=config.PATH_MOVIE_DATA_PREPROCESSED)
@@ -107,7 +107,7 @@ def try_and_log_various_hyperparams():
     Tries various combinations of model hyperparams (based on config.HYPERPARAMS_TO_TRY)
     Saves CSV file containing info about various hyperparams tried (at config.PATH_HYPERPARAMS_TRIED)
     """
-    df_movie_data = get_train_test_data()
+    df_movie_data = get_training_data()
     df_hyperparams_tried = pd.DataFrame()
     runs = get_runs(dictionary_hyperparams=config.HYPERPARAMS_TO_TRY)
     runs = pd.Series(data=runs).sample(len(runs)).tolist() # Shuffle order of runs
@@ -160,7 +160,7 @@ def execute_training_pipeline():
     - Save certain info about said model (to model-related pickle files)
     """
     print("Training the model...")
-    df_movie_data = get_train_test_data()
+    df_movie_data = get_training_data()
     dictionary_train_info = train_model(df_movie_data=df_movie_data)
     utils.pickle_save(data_obj=dictionary_train_info['mlb'], filepath=config.PATH_MODEL_MLB)
     utils.pickle_save(data_obj=dictionary_train_info['tfidf'], filepath=config.PATH_MODEL_TFIDF)
