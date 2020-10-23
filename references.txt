@@ -3,3 +3,6 @@ https://towardsdatascience.com/multi-label-text-classification-5c505fdedca8
 https://stats.stackexchange.com/questions/49226/how-to-interpret-f-measure-values
 https://code.visualstudio.com/docs/python/environments
 https://janakiev.com/blog/jupyter-virtual-envs/
+https://scikit-learn.org/stable/modules/generated/sklearn.multiclass.OneVsRestClassifier.html
+https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html
+https://www.geeksforgeeks.org/python-how-to-make-a-terminal-progress-bar-using-tqdm/
