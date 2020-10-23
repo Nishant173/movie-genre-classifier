@@ -8,6 +8,7 @@ from sklearn.metrics import f1_score
 from sklearn.model_selection import train_test_split
 from sklearn.multiclass import OneVsRestClassifier
 from sklearn.preprocessing import MultiLabelBinarizer
+from tqdm import tqdm
 import warnings
 warnings.filterwarnings(action='ignore')
 
@@ -110,7 +111,8 @@ def try_and_log_various_hyperparams():
     df_hyperparams_tried = pd.DataFrame()
     runs = get_runs(dictionary_hyperparams=config.HYPERPARAMS_TO_TRY)
     runs = pd.Series(data=runs).sample(len(runs)).tolist() # Shuffle order of runs
-    for run in runs:
+    for idx in tqdm(range(len(runs))):
+        run = runs[idx]
         max_df = run.max_df
         max_features = run.max_features
         mlb = MultiLabelBinarizer()
@@ -167,4 +169,9 @@ def execute_training_pipeline():
     return None
 
 if __name__ == "__main__":
-    utils.run_and_timeit(func=execute_training_pipeline)
+    if config.MODE == 'train':
+        utils.run_and_timeit(func=execute_training_pipeline)
+    elif config.MODE == 'explore_hyperparams':
+        utils.run_and_timeit(func=try_and_log_various_hyperparams)
+    else:
+        print("Invalid input! Set config.MODE to either of ['train', 'explore_hyperparams']")
