@@ -3,6 +3,6 @@ env
 *__pycache__
 *.jovianrc
 *.ipynb_checkpoints
-*.html
+Model.html
 data/movie_metadata.tsv
 data/plot_summaries.tsv
