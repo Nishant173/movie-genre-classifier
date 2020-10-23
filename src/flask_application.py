@@ -8,7 +8,7 @@ app = Flask(__name__)
 def home():
     return "<h1>This is the Home page. Please go to '/predict_genres'</h1>"
 
-@app.route('/predict_genres', methods=['GET', 'POST'])
+@app.route(rule='/predict_genres', methods=['GET', 'POST'])
 def predict_genres():
     if request.method == 'POST':
         text = request.form.get('movie-plot', default="")
