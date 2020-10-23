@@ -1,8 +1,14 @@
+import datetime
 import time
 import joblib
 import numpy as np
 import pandas as pd
 import warnings
+
+def get_current_timestamp():
+    dt_now = datetime.datetime.now()
+    current_timestamp = str(dt_now).replace(':', '_').replace(' ', '_').replace('-', '_')[:19]
+    return current_timestamp
 
 def pickle_load(filepath):
     """Loads data from pickle file, via joblib module"""
