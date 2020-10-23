@@ -102,7 +102,7 @@ def get_runs(dictionary_hyperparams):
         runs_list.append(run_tuple(*value))
     return runs_list
 
-def try_and_log_various_hyperparams():
+def explore_hyperparams():
     """
     Tries various combinations of model hyperparams (based on config.HYPERPARAMS_TO_TRY)
     Saves CSV file containing info about various hyperparams tried (at config.PATH_HYPERPARAMS_TRIED)
@@ -172,6 +172,6 @@ if __name__ == "__main__":
     if config.MODE == 'train':
         utils.run_and_timeit(func=execute_training_pipeline)
     elif config.MODE == 'explore_hyperparams':
-        utils.run_and_timeit(func=try_and_log_various_hyperparams)
+        utils.run_and_timeit(func=explore_hyperparams)
     else:
         print("Invalid input! Set config.MODE to either of ['train', 'explore_hyperparams']")
