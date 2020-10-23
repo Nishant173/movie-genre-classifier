@@ -6,6 +6,9 @@ def get_genre_list(json_obj):
     """Gets list of genres from JSON object"""
     return list(json.loads(json_obj).values())
 
+def get_list_length(list_obj):
+    return len(list_obj)
+
 def get_movie_genre_data():
     """Gets DataFrame containing movie-genre data"""
     dict_rename_mapper = {
@@ -18,6 +21,10 @@ def get_movie_genre_data():
     df_movie_genre_data = df_movie_genre_data.loc[:, list(dict_rename_mapper.values())]
     df_movie_genre_data['MovieId'] = df_movie_genre_data['MovieId'].astype(str)
     df_movie_genre_data['Genre'] = df_movie_genre_data['Genre'].apply(get_genre_list)
+    df_movie_genre_data['NumberOfGenres'] = df_movie_genre_data['Genre'].apply(get_list_length)
+    df_movie_genre_data = df_movie_genre_data[df_movie_genre_data['NumberOfGenres'] > 0]
+    df_movie_genre_data.drop(labels=['NumberOfGenres'], axis=1, inplace=True)
+    df_movie_genre_data.reset_index(drop=True, inplace=True)
     return df_movie_genre_data
 
 def get_movie_plot_data():
