@@ -17,7 +17,9 @@ print(prettify_genres(tuple_genres=tuple_genres))
 ```
 
 ### Hyperparameter exploration and logging
+Can log hyperparameters and evaluation metrics
 ![Hyperparameter exploration and logging](images/hyperparam_runs.jpeg)
 
 ### Training data
+This is what the training data looks like
 ![Training data](images/training_data.jpeg)
