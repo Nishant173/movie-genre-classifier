@@ -6,3 +6,8 @@ https://janakiev.com/blog/jupyter-virtual-envs/
 https://scikit-learn.org/stable/modules/generated/sklearn.multiclass.OneVsRestClassifier.html
 https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html
 https://www.geeksforgeeks.org/python-how-to-make-a-terminal-progress-bar-using-tqdm/
+https://stackoverflow.com/questions/37465506/jinja2-exceptions-templatenotfound
+https://www.w3schools.com/tags/att_textarea_form.asp
+https://www.youtube.com/watch?v=IIi6e5oDZ68
+https://www.youtube.com/watch?v=9MHYHgh4jYc
+https://stackoverflow.com/questions/11556958/sending-data-from-html-form-to-a-python-script-in-flask
