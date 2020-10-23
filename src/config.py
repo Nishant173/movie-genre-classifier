@@ -7,6 +7,7 @@ PATH_MODEL_MLB = "../model_files/mlb_obj.pkl"
 PATH_MODEL_TFIDF = "../model_files/tfidf_obj.pkl"
 PATH_MODEL_OVR_CLF = "../model_files/ovr_clf_obj.pkl"
 
+MODE = 'train' # Options: ['train', 'explore_hyperparams']
 PATH_HYPERPARAMS_TRIED = "../model_files/hyperparams_tried.csv"
 
 # Hyperparams that need to be tried out for the model (before selecting the best set of hyperparams)
