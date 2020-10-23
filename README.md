@@ -17,7 +17,7 @@ print(prettify_genres(tuple_genres=tuple_genres))
 ```
 
 ### Hyperparameter exploration and logging
-Can log hyperparameters and evaluation metrics
+You can log hyperparameters and evaluation metrics by going to `src/config.py` and setting `MODE = 'explore_hyperparams'`
 ![Hyperparameter exploration and logging](images/hyperparam_runs.jpeg)
 
 ### Training data
