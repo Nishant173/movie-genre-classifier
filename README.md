@@ -16,6 +16,7 @@ from utils import prettify_genres
 tuple_genres = predict_genres_from_plot(text="The plot of some movie") # Returns tuple of possible genre/s
 print(prettify_genres(tuple_genres=tuple_genres))
 ```
+- You can also make predictions via the Flask app by running `flask_application.py` from the `src` directory and opening the Flask app locally on your browser.
 
 ### Hyperparameter exploration and logging
 You can log hyperparameters and evaluation metrics.
