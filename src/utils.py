@@ -36,7 +36,7 @@ def prettify_genres(tuple_genres):
     if not isinstance(tuple_genres, tuple):
         raise TypeError("Expected tuple, but got {}".format(type(tuple_genres)))
     if len(tuple_genres) == 0:
-        prettified_genres = "Could not predict genre"
+        prettified_genres = "Could not predict genre for this particular movie-plot"
     elif len(tuple_genres) == 1:
         prettified_genres = f"Genre is {tuple_genres[0]}"
     else:
