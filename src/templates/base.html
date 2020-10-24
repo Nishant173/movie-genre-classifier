@@ -5,12 +5,10 @@
     </head>
 
     <body>
-        <nav>
-            <ul>
-                <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="{{ url_for('predict_genres') }}">Predict</a></li>
-            </ul>
-        </nav>
+        <div>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('predict_genres') }}">Predict</a>
+        </div>
         {% block content %}
         {% endblock content %}
     </body>
