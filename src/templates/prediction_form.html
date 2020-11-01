@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Movie Genre Predictor</h1>
     <form action="{{ url_for('predict_genres') }}" method="POST">
         <textarea rows="15" cols="150" name="movie-plot" placeholder="Enter movie plot here"></textarea>
         <input type="submit" value="Predict">
