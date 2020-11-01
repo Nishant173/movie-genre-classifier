@@ -1,6 +1,8 @@
 html {
 	height: 100%;
 	margin: 0;
+	min-height: 100%;
+	position: relative;
 }
 
 body {
@@ -21,10 +23,12 @@ ul.no-bullets {
 }
 
 .footer {
-    height: 50px;
-    margin-top: -50px;
+    /* height: 50px; */
+    /* margin-top: -50px; */
 	flex-shrink: 0;
 	position: relative;
+	/* bottom: 0; */
+	/* width: 100%; */
 	padding: 20px;
 	background: linear-gradient(45deg, #34FB9E, #A64BC8, #D3583C);
 	background-size: 500% 500%;
